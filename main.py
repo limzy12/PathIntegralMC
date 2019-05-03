@@ -25,12 +25,6 @@ def totalEnergy(path, eps):
 
 def metropolis(newPath, path, eps):
     dEnergy = totalEnergy(newPath, eps) - totalEnergy(path, eps)
-
-    if dEnergy == 0:
-        print(totalEnergy(newPath, eps))
-        print(totalEnergy(path,eps))
-        print(path)
-        print(newPath)
     if dEnergy < 0:
         return True
     elif rndm.rand() < exp(-eps * dEnergy):
